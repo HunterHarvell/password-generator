@@ -1,46 +1,17 @@
-var playAgain;
-var userInput = "";
-var cpuInput = "";
-var wins = 0;
-var losses = 0;
-var ties = 0;
-
-// constant
-var OPTIONS = ["R", "P", "S"];
+// Assignment code here
 
 
-// What are the steps?
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-/*
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-1. prompt the user for their choice
-2. user makes their choice
-3. validate choice
-4. store userInput in state
-5. computer make choice
-6. alerted user of cpu choice
-7. compare choices
-    -if user R
-        -if cpu picks "R" then tie
+  passwordText.value = password;
 
-
-
-
-*/
-
-if(userInput === "R") {
-    if(cpuInput  === "R") {
-        console.log(tie);
-    }
-} else if(userInput === "P") {
-
-}else if (userInput === "S") {
-    
-} else {
-    console.log("incoorect input");
 }
 
-
-var input = prompt("jkfljdskaljfds");
-var playAgain = confirm("kjldajkls");
-alert("kldjaklsd");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
