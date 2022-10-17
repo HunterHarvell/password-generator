@@ -51,14 +51,37 @@ function writePassword() {
     if (!passwordInfo) {
       window.alert("You need to select at least one option, please try again!");
     };
+
+    // while there aren't enough characters
+    while(passChar.length < characterAmount) {
+      // choose a random char from charInfo
+      passChar.push(getRandomChar(passwordInfo));
+    };
+
+    // // shuffle characters using Fisher-Yates algorithm
+    // // https://stackoverflow.com/a/2450976/8376184
+    for(let i = passChar.length - 1; i > 0; i--) {
+      const swapIndex = Math.floor(Math.random() * (i + 1));
+      const temp = passChar[i];
+      passChar[i] = passChar[swapIndex];
+      passChar[swapIndex] = temp;
+    };
+
+    // return the password character list
+    return passChar.join("");
+  } else {
+    // if user's response is invalid
+    window.alert("You need to select a valid length for you password!");
   };
 
-  var password = "";
-  var passwordText = document.querySelector("#password");
+  function getRandomChar(fromString) {
+  return fromString[randRange(fromString.length)];
+  };
 
+  var password = passChar;
+  var passwordText = document.querySelector("#password");  
   passwordText.value = password;
-
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
