@@ -23,7 +23,7 @@ function writePassword() {
     var getNumeral = window.confirm("Would you like to include numbers in your password? (OK for 'YES' & CANCEL for 'NO')");
     if (getNumeral) {
       passwordInfo += numerals;
-      passChar.push(Math.floor(Math.random()*numerals.length));
+      passChar.push(numerals[Math.floor(Math.random()*numerals.length)]);
     };
 
     // Would you like special characters?
@@ -66,17 +66,11 @@ function writePassword() {
       passChar[i] = passChar[swapIndex];
       passChar[swapIndex] = temp;
     };
-
-    // return the password character list
-    return passChar.join("");
   } else {
     // if user's response is invalid
     window.alert("You need to select a valid length for you password!");
   };
 
-  function getRandomChar(fromString) {
-  return fromString[randRange(fromString.length)];
-  };
 
   var password = passChar;
   var passwordText = document.querySelector("#password");  
