@@ -24,3 +24,7 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
 ## Deployed Appliction 
+
+Website link: https://hunterharvell.github.io/password-generator/
+
+Repository Link: https://github.com/HunterHarvell/password-generator.git
