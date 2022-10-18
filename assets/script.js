@@ -22,18 +22,22 @@ function writePassword() {
   if (characterAmount >= 8 && characterAmount <=128) {
     var getNumeral = window.confirm("Would you like to include numbers in your password? (OK for 'YES' & CANCEL for 'NO')");
     if (getNumeral) {
+      // adss numeral array to passwordInfo
       for (i = numerals.length - 1; i > 0; i--) {
         passwordInfo.push(numerals[i]);
       };
+      // adds a numeral to ensure at least one is chosen
       passChar.push(numerals[Math.floor(Math.random()*numerals.length)]);
     };
 
     // Would you like special characters?
     var getSC = window.confirm("Would you like to use special characters in your password? (OK for 'YES' & CANCEL for 'NO')");
     if (getSC) {
+      // adds specialChar array to passwordInfo
       for (i = specialChar.length - 1; i > 0; i--) {
         passwordInfo.push(specialChar[i]);
       };
+      // adds random special character to ensure at least one is chosen
       passChar.push(specialChar[Math.floor(Math.random()*specialChar.length)]);
     };
 
@@ -81,7 +85,7 @@ function writePassword() {
     // if user selected password length outside of spec
     window.alert("You need to select a valid length for you password!");
   };
-  
+
 // displays the password to the user
   var password = passChar.join('');
   var passwordText = document.querySelector("#password");  

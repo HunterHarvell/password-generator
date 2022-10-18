@@ -1,4 +1,5 @@
 # password-generator
+This application can be used to generate a randomized password with varying lengths and charcter constraints. Hit the "Generate Password" button and follow the window prompts to be given your password.
 
 ## User Story
 AS AN employee with access to sensitive data
